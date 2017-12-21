@@ -13,9 +13,37 @@ android {
 }
 
 dependencies {
+  // Support libraries
   implementation deps.support.app_compat
+  implementation deps.support.v4
+  implementation deps.support.design
   implementation deps.support.constraint_layout
-  testImplementation deps.junit
+  implementation deps.support.cardview
+  implementation deps.loombok
+  implementation deps.timber
+
+  // Architecture components
+  implementation deps.lifecycle.runtime
+  implementation deps.lifecycle.extensions
+  implementation deps.lifecycle.java8
+  annotationProcessor deps.lifecycle.compiler
+  implementation deps.room.runtime
+  annotationProcessor deps.room.compiler
+
+  // Android Testing Support Library's runner and rules
   androidTestImplementation deps.atsl.runner
+  androidTestImplementation deps.atsl.rules
+  androidTestImplementation deps.room.testing
+  androidTestImplementation deps.arch_core.testing
+
+  // Espresso UI Testing
   androidTestImplementation deps.espresso.core
+  androidTestImplementation deps.espresso.contrib
+  androidTestImplementation deps.espresso.intents
+
+  // Resolve conflicts between main and test APK:
+  androidTestImplementation deps.support.annotations
+  androidTestImplementation deps.support.v4
+  androidTestImplementation deps.support.app_compat
+  androidTestImplementation deps.support.design
 }
