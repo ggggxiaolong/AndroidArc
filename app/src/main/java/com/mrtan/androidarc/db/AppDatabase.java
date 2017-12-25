@@ -1,6 +1,7 @@
 package com.mrtan.androidarc.db;
 
 import android.arch.persistence.room.Database;
+import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import com.mrtan.androidarc.db.converter.DateConverter;
 import com.mrtan.androidarc.db.dao.CommentDao;
@@ -13,7 +14,7 @@ import com.mrtan.androidarc.db.entity.ProductEntity;
  */
 @Database(entities = { ProductEntity.class, CommentEntity.class}, version = 1)
 @TypeConverters(DateConverter.class)
-public abstract class AppDatabase {
+public abstract class AppDatabase extends RoomDatabase {
 
   static final String DATABASE_NAME = "basic-sample-db";
 

@@ -3,6 +3,8 @@ package com.mrtan.androidarc.db.entity;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import com.mrtan.androidarc.model.Product;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -11,7 +13,9 @@ import lombok.Setter;
  */
 @Entity(tableName = "products")
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ProductEntity implements Product {
   @PrimaryKey private int id;
   private String name;

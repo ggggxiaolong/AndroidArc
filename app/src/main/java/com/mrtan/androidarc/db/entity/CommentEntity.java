@@ -6,6 +6,8 @@ import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import com.mrtan.androidarc.model.Comment;
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -21,6 +23,8 @@ import lombok.Setter;
     @Index(value = "productId")
 })
 @Setter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class CommentEntity implements Comment {
 

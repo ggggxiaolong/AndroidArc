@@ -19,7 +19,8 @@ dependencies {
   implementation deps.support.design
   implementation deps.support.constraint_layout
   implementation deps.support.cardview
-  implementation deps.loombok
+  compileOnly deps.lombok
+  annotationProcessor deps.lombok
   implementation deps.timber
 
   // Architecture components
