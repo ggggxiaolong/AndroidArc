@@ -1,4 +1,19 @@
 android {
+  signingConfigs {
+    debug {
+      storeFile file('../dependencies/debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+    release {
+      storeFile file('../dependencies/debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+  }
+
   buildTypes {
     release {
       postprocessing {
@@ -6,8 +21,9 @@ android {
         removeUnusedResources true
         obfuscate true
         optimizeCode true
-        proguardFile '../dependecies/proguard-rules.pro'
+        proguardFile 'proguard-rules.pro'
       }
+      signingConfig signingConfigs.release
     }
   }
 }
