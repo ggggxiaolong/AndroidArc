@@ -28,7 +28,7 @@ class DatabaseInitUtil {
   };
 
   public static final String[] COMMENTS = new String[] {
-      "Comment 1", "Comment 2", "Comment 3", "Comment 4", "Comment 5", "Comment 6"
+      "Comment 1 ", "Comment 2 ", "Comment 3 ", "Comment 4 ", "Comment 5 ", "Comment 6 "
   };
 
   static void initializeDb(AppDatabase db) {
@@ -59,7 +59,7 @@ class DatabaseInitUtil {
       for (int i = 0; i < commentsNumber; i++) {
         CommentEntity comment = CommentEntity.builder()
             .productId(product.getId())
-            .text(COMMENTS[i] + "for" + product.getName())
+            .text(COMMENTS[i] + "for " + product.getName())
             .postedAt(new Date(
                 System.currentTimeMillis() - TimeUnit.DAYS.toMillis(commentsNumber - i)
                     + TimeUnit.HOURS.toMillis(i)))
